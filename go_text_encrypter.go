@@ -9,7 +9,23 @@ import (
 )
 
 func main() {
-	fmt.Println("WIP")
+	plaintext := []byte("Hello, I am a private message - encrypt me now.")
+
+	// Example secret key - replace with non-hardcoded 16-byte / 128 bits key
+	// **Never expose your secret key**
+	key := []byte("abcdefgh12345678")
+
+	ciphertext, err := encrypt(plaintext, key)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("- - START - -")
+	fmt.Println("Plaintext: ", string(plaintext))
+	fmt.Println("- - ENCRYPTION - -")
+	fmt.Println("Ciphertext (raw): ", ciphertext)
+	fmt.Printf("Ciphertext (hexadecimal): %x", ciphertext)
+	fmt.Println("\n- - END - -")
 }
 
 func encrypt(plaintext []byte, key []byte) ([]byte, error) {
