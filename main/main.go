@@ -23,12 +23,13 @@ func main() {
 	}
 
 	fmt.Println("- - START - -")
-	fmt.Println("Pre-encryption plaintext: ", string(plaintext))
-	fmt.Println("- - ENCRYPTION - -")
-	fmt.Println("Ciphertext (raw): ", ciphertext)
-	fmt.Printf("Ciphertext (hexadecimal): %x\n", ciphertext)
-	fmt.Println("- - DECRYPTION - -")
-	fmt.Println("Decrypted ciphertext (raw): ", decrypted)
-	fmt.Printf("Decrypted ciphertext (string): %s\n", decrypted)
-	fmt.Println("- - END - -")
+	fmt.Println("\n- - PRE-ENCRYPTION - -")
+	fmt.Println("\nPre-encryption text (plaintext): ", string(plaintext))
+	fmt.Println("\n- - ENCRYPTION - -")
+	fmt.Println("\nCiphertext (raw): ", ciphertext)
+	fmt.Printf("\nCiphertext (hexadecimal): %x\n", ciphertext)
+	fmt.Println("\n- - DECRYPTION - -")
+	fmt.Println("\nDecrypted ciphertext (raw): ", decrypted)
+	fmt.Printf("\nDecrypted ciphertext (plaintext): %s\n", decrypted)
+	fmt.Println("\n- - END - -")
 }
