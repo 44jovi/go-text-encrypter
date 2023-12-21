@@ -17,10 +17,18 @@ func main() {
 		panic(err)
 	}
 
+	decrypted, err := encryption_utils.Decrypt(ciphertext, key)
+	if err != nil {
+		panic(err)
+	}
+
 	fmt.Println("- - START - -")
-	fmt.Println("Plaintext: ", string(plaintext))
+	fmt.Println("Pre-encryption plaintext: ", string(plaintext))
 	fmt.Println("- - ENCRYPTION - -")
 	fmt.Println("Ciphertext (raw): ", ciphertext)
-	fmt.Printf("Ciphertext (hexadecimal): %x", ciphertext)
-	fmt.Println("\n- - END - -")
+	fmt.Printf("Ciphertext (hexadecimal): %x\n", ciphertext)
+	fmt.Println("- - DECRYPTION - -")
+	fmt.Println("Decrypted ciphertext (raw): ", decrypted)
+	fmt.Printf("Decrypted ciphertext (string): %s\n", decrypted)
+	fmt.Println("- - END - -")
 }
