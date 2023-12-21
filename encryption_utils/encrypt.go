@@ -28,7 +28,7 @@ func Encrypt(plaintext []byte, key []byte) ([]byte, error) {
 	}
 
 	// Encrypt the plaintext
-	// Reuse storage of 'plaintext' for ciphertext destination
-	ciphertext := gcm.Seal(plaintext[:0], nonce, plaintext, nil)
+	// TODO: review best practices / alternatives to using nonce for "dst"
+	ciphertext := gcm.Seal(nonce, nonce, plaintext, nil)
 	return ciphertext, nil
 }
