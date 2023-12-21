@@ -22,7 +22,7 @@ func Encrypt(plaintext []byte, key []byte) ([]byte, error) {
 
 	// Random nonce for each encryption
 	nonce := make([]byte, gcm.NonceSize())
-	// Verify nonce size is valid
+	// Fill the nonce byte slice with random bytes
 	if _, err = io.ReadFull(rand.Reader, nonce); err != nil {
 		return nil, err
 	}
