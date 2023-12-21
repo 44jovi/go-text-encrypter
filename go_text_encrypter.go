@@ -13,27 +13,27 @@ func main() {
 }
 
 func encrypt(plaintext []byte, key []byte) ([]byte, error) {
-    // Create block cipher
+	// Create block cipher
 	block, err := aes.NewCipher(key)
-    if err != nil {
-        return nil, err
-    }
+	if err != nil {
+		return nil, err
+	}
 
-    // Create GCM cipher
-    gcm, err := cipher.NewGCM(block)
-    if err != nil {
-        return nil, err
-    }
+	// Create GCM cipher
+	gcm, err := cipher.NewGCM(block)
+	if err != nil {
+		return nil, err
+	}
 
-    // Random nonce for each encryption
-    nonce := make([]byte, gcm.NonceSize())
+	// Random nonce for each encryption
+	nonce := make([]byte, gcm.NonceSize())
 	// Verify nonce size is valid
-    if _, err = io.ReadFull(rand.Reader, nonce); err != nil {
-        return nil, err
-    }
+	if _, err = io.ReadFull(rand.Reader, nonce); err != nil {
+		return nil, err
+	}
 
-    // Encrypt the plaintext
+	// Encrypt the plaintext
 	// Reuse storage of 'plaintext' for ciphertext destination
-    ciphertext := gcm.Seal(plaintext[:0], nonce, plaintext, nil)
-    return ciphertext, nil
+	ciphertext := gcm.Seal(plaintext[:0], nonce, plaintext, nil)
+	return ciphertext, nil
 }
