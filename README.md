@@ -1,10 +1,10 @@
 # Text Encrypter / Decrypter (Go)
 
-A plaintext encrypter, using a symmetrical block cipher within the built-in `crypto` library in Go.
+A plaintext encrypter/decrypter, using a symmetrical block cipher algorithm within the built-in `crypto` library in Go.
 
 ## Getting started
 
-- Install Go on your local system
+- Install [Go](https://go.dev/dl/) on your local system
 - Clone this repository
 - Navigate to the repository root directory
 - Use Go to run `main.go` in the `main` package

@@ -8,8 +8,8 @@ import (
 func main() {
 	plaintext := []byte("Hello, I am a private message - encrypt me now.")
 
-	// Example secret key - replace with non-hardcoded 16-byte / 128 bits key
-	// **Never expose your secret key**
+	// Example 16-byte / 128-bit secret key
+	// **Never wrongly expose a real secret keys**
 	key := []byte("abcdefgh12345678")
 
 	ciphertext, err := encryption_utils.Encrypt(plaintext, key)
